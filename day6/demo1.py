@@ -7,6 +7,53 @@
         逻辑运算符 and  or
 '''
 
+# 随机产生两个数字（1~10），在控制台中获取两个数相加的结果，若用户输入正确得10分
+
+# import random
+#
+# a = 0
+# for i in range(3):
+#     number1 = random.randint(1, 10)
+#     number2 = random.randint(1, 10)
+#     sum = number1 + number2
+#     result = input("%d + %d = ?" %(number1, number2))
+#     if int(result) == sum:
+#         print("+10")
+#         a += 10
+#     else:
+#         print("error, %d again" %(2-i))
+#         continue
+#
+# print("good, you have %d" %(a))
+
+
+
+
+# 累加10~36之间的和
+# sum = 0
+# for i in range(10, 37):
+#     sum += i
+# print(sum) #621
+
+# 累加1~100之间的偶数和
+# sum = 0
+# for i in range(2, 101, 2):
+#     sum += i
+# print(sum) #2550
+
+# 累加1~100的和
+
+# num = 0
+# for i in range(1, 101):
+#     num += i
+# print(num)
+
+
+
+# for 循环 range 更善于设定循环次数
+#
+# for i in range(1,10):
+#     print(i)
 
 
 
