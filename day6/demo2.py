@@ -16,53 +16,82 @@
             列表list
                 由一系列变量组成的可变序列容器
 '''
+import random
+
+
+
+
+
+# # 使用range生成5个1-10之间的数，将数字的平方存入list01中
+# list01 = [random.randrange(1,10) **2 for item in range(5)]
+# print(list01)
+# # 将list01中所有奇数存入list02
+# list02 = [item1 for item1 in list01 if item1 % 2 == 1]
+# print(list02)
+# # 将list01中所有偶数存入list03
+# list03 = [item2 for item2 in list01 if item2 % 2 == 0]
+# print(list03)
+# # 将list01中所有偶数大于5的数字增加1后存入list04
+# list04 = [item3 + 1 for item3 in list01 if item3 > 5 and item3 %2 == 0]
+# print(list04)
+
+
+# 列表推导式 --> 使用简易方法，将容器转化为列表
+# list01 = [5, 56, 6, 7, 7, 8, 19]
+# list02 = []
+# for item in list01:
+#     list02.append(item + 1)
+# list02 = [item + 1 for item in list01 if item > 10]
+
+# list02 = [item + 1 for item in list01]
+# print(list02)
+
+
 # 彩票由6个红球和1个蓝球组成，红球范围：  篮球范围： 系统随机生成一注号码
 # 用户随机输入
 
-import random
-
-# 随机生成的彩票号码列表
-mylist = []
-while True:
-    if len(mylist) == 6:
-        break
-    num = random.randint(1,33)
-    if num not in mylist:
-        mylist.append(str(num))
-    else:
-        continue
-mylist.append(str(random.randint(1,16)))
-
-item = 0
-# 用户选择的彩票号码列表
-list_myinput = []
-while True:
-    if item == 6:
-        my_input = input("please input the blue number>")
-        if my_input == "":
-            break
-        elif int(my_input) < 1 or int(my_input) > 16:
-            print("不在号码范围内")
-            continue
-        elif my_input in list_myinput:
-            print("号码已经重复")
-            continue
-        list_myinput.append(my_input)
-        break
-    my_input = input("please input the %d red number>" %(item+1))
-    if my_input == "":
-        break
-    elif int(my_input) < 1 or int(my_input) >33:
-        print("不在号码范围内")
-        continue
-    elif my_input in list_myinput:
-        print("号码已经重复")
-        continue
-    list_myinput.append(my_input)
-    item += 1
-
-print("彩票中奖号码是：%s" %("".join(str(mylist))))
-print("你选择的号码是：%s" %("".join(str(list_myinput))))
+# import random
+#
+# # 随机生成的彩票号码列表
+# mylist = []
+# while len(mylist) < 6:
+#     num = random.randint(1,33)
+#     if num not in mylist:
+#         mylist.append(str(num))
+#     else:
+#         continue
+# mylist.append(str(random.randint(1,16)))
+#
+# item = 0
+# # 用户选择的彩票号码列表
+# list_myinput = []
+# while True:
+#     if item == 6:
+#         my_input = input("please input the blue number>")
+#         if my_input == "":
+#             break
+#         elif int(my_input) < 1 or int(my_input) > 16:
+#             print("不在号码范围内")
+#             continue
+#         elif my_input in list_myinput:
+#             print("号码已经重复")
+#             continue
+#         list_myinput.append(my_input)
+#         break
+#     my_input = input("please input the %d red number>" %(item+1))
+#     if my_input == "":
+#         break
+#     elif int(my_input) < 1 or int(my_input) >33:
+#         print("不在号码范围内")
+#         continue
+#     elif my_input in list_myinput:
+#         print("号码已经重复")
+#         continue
+#     list_myinput.append(my_input)
+#     item += 1
+#
+# print("彩票中奖号码是：%s" %("".join(str(mylist))))
+# print("你选择的号码是：%s" %("".join(str(list_myinput))))
 
 
 
