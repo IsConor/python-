@@ -1,5 +1,9 @@
 '''
     封装数据
+        优势：更符合人类的思维方式，将数据与对数据的操作封装到一起
+        使用property封装变量
+    封装行为
+        优势：以”模块化“的方式进行编程（可以集中精力设计/组织/指挥多个类协同工作）
     静态方法引入：
         总结：
             实例方法：操作对象的变量
@@ -8,10 +12,92 @@
     类变量: 被所有对象共享
 '''
 
+# class Person:
+#     def __init__(self, name):
+#         self.name = name
+#     @property
+#     def name(self):
+#         return self.__name
+#     @name.setter
+#     def name(self,value):
+#         self.__name = value
+#     def go_to(self, destination, type):
+#         print(self.name,"去",destination)
+#         type.run(destination)
+# class Transport:
+#     def run(self, destination):
+#         print("行驶到:",destination)
+#
+# Lz = Person("老张")
+# car = Transport()
+# Lz.go_to("东北",car)
 
 
 
+# 定义敌人类，姓名，攻击力，血量，
 
+# class Empty:
+#     def __init__(self,name,atk,hp):
+#         self.name = name
+#         self.__atk = atk
+#         self.__hp = hp
+#
+#     @property  #创建property对象，只负责拦截读取操作
+#     def atk(self):
+#         return self.__atk
+#     @atk.setter  #只负责拦截写入操作
+#     def atk(self,value):
+#         if 10 <= value <= 50:
+#             self.__atk = value
+#         else:
+#             raise ValueError("超出范围")
+#     @property
+#     def hp(self):
+#         return self.__hp
+#     @hp.setter
+#     def hp(self,value):
+#         if 0 <= value <= 100:
+#             self.__hp = value
+#         else:
+#             raise ValueError("超出范围")
+#
+#     def print_self_info(self):
+#         print(self.name, self.atk, self.hp)
+#
+# empty = Empty("aaa",12, 99)
+# empty.print_self_info()
+#
+#
+# print(empty.atk)
+
+
+
+# class Wife:
+#     def __init__(self,name,age,weight):
+#         self.name = name
+#         # 本质：障眼法
+#         # 实际将变量 age 改为 _类名__age
+#         self.set_age(age)
+#         self.set_weight(weight)
+#
+#     def get_age(self):
+#         return self.__age
+#     def set_age(self,age):
+#         self.__age = age
+#     def get_weight(self):
+#         return self.__weight
+#     def set_weight(self,wei):
+#         self.__weight = wei
+
+# w01 = Wife("aaa", 87, 87)
+# w01.name = "bbb"
+# print(w01.name)
+# #w01._Wife__age = 1 # 修改了类中定义的私有变量, 在python中不要试图寻找带有__的变量（私有）
+#
+# #print(w01.__dict__) #python内置变量，存储对象的实例变量的字典
+# w01.set_age(18)
+# print(w01.get_age())
+#
 
 
 # # 静态方法引入

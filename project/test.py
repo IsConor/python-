@@ -1,10 +1,104 @@
 '''
     测试
 '''
+list01 = []
+list_demo = {"id":1,"name":44, "age":3, "score":4}
+list_demo1 = {"id":1,"name":2, "age":3, "score":4}
+list01.append(list_demo1)
+list01.append(list_demo)
+for item in list01:
+    if item["name"] == 44:
+        list01.remove(item)
+
+for item in list01:
+    print(item)
+
+# class Person:
+#     def __init__(self, name, gongfu, money):
+#         self.name = name
+#         self.gongfu = gongfu
+#         self.money = money
+#     @property
+#     def name(self):
+#         return self.__name
+#     @name.setter
+#     def name(self,value):
+#         self.__name = value
+#     @property
+#     def gongfu(self, value):
+#         return self.__gongfu
+#     @gongfu.setter
+#     def gongfu(self, value):
+#         self.__gongfu = value
+#     @property
+#     def money(self):
+#         return self.__money
+#     @money.setter
+#     def money(self, value):
+#         self.__money = value
+#
+#     def work(self, value):
+#         self.money += value
+#         print(self.name,"上班挣了",value)
+#
+#
+# wuji = Person("无忌","九阳", 100)
+# zhaomin = Person("赵敏", "化妆", 100)
+#
+# wuji.work(5000)
+# print(wuji.money)
 
 
 
 
+
+'''
+    面向对象
+'''
+
+# class Person:
+#     def __init__(self,name,money):
+#         self.name = name
+#         self.money = money
+#     @property
+#     def name(self):
+#         return self.__name
+#     @name.setter
+#     def name(self,value):
+#         self.__name = value
+#     @property
+#     def money(self):
+#         return self.__money
+#     @money.setter
+#     def money(self,value):
+#         self.__money = value
+#
+#     def goto(self, bank, behave,des):
+#         print(self.name,"go to", bank.name,behave.behave(des))
+#
+# class Bank:
+#     money = 100000
+#     def __init__(self,name):
+#         self.name = name
+#
+#     @property
+#     def name(self):
+#         return self.__name
+#     @name.setter
+#     def name(self,value):
+#         self.__name = value
+#     def get_money(self, person, money):
+#         if Bank.money > money:
+#             Bank.money -= money
+#             person.money += money
+#         else:
+#             raise ValueError("银行钱不够")
+#
+# xm = Person("小明",100)
+# yh = Bank("招商")
+# yh.get_money(xm,10000)
+# print(xm.money)
+# print(Bank.money)
 
 
 
