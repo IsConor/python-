@@ -1,6 +1,17 @@
 
 '''
-    继承和多态
+
+    面向对象：考虑问题从对象的角度出发
+    抽象：从多个事物中，舍弃个别的/非本质的特征，抽出共性的本质过程
+    三大特征：
+        封装：将每个变化点单独分解到不同的类中，例如老张开车去东北：定义人类、车类
+        继承：重用现有类的功能和概念，并在此基础上进行扩展。例如：图形管理器，统计圆形/矩形。。。面积
+        多态：调用基类那个比较抽象的方法，执行派生类具体的方法，派生类重写基类的抽象方法
+    设计原则
+        开闭原则：允许增加新功能，不允许修改客户端代码
+        单一职责：一个类有且只有一个改变的原因。
+        依赖倒置：调用抽象（父），不要调用具体（子），抽象不要依赖于具体。
+        组合复用：如果仅仅是代码的复用，优先使用组合。
 '''
 
 
@@ -8,6 +19,9 @@
 # 员工：程序员：底薪+项目分红   销售：底薪+销售额*0.05   软件测试。。。。
 
 class PersonnelManager:
+    """
+        员工管理器：负责增加、删除、查询员工薪资，查看员工信息
+    """
     def __init__(self):
         self.__manager = []
     def add_personnel(self, personnel):
@@ -28,11 +42,24 @@ class PersonnelManager:
             print("this personnel is not in manager")
 
 class Personnel:
+    """
+        基类（抽象类）
+    """
     def show_info(self):
+        """
+            查看自己的信息
+        """
         pass
     def count_money(self):
+        """
+            计算薪资
+        :return: 总薪资
+        """
         pass
 class Programer(Personnel):
+    """
+        程序员类
+    """
     def __init__(self,name, age, base_money, red_money):
         self.name = name
         self.age = age
@@ -41,8 +68,15 @@ class Programer(Personnel):
     def show_info(self):
         print("program personnel name:%s, age:%d"%(self.name, self.age))
     def count_money(self):
+        """
+            薪资= 底薪 + 项目分红
+        :return: 总薪资
+        """
         return self.base_money + self.red_money
 class Market(Personnel):
+    """
+        销售类
+    """
     def __init__(self,name, age, base_money, up_money):
         self.name = name
         self.age = age
@@ -51,6 +85,10 @@ class Market(Personnel):
     def show_info(self):
         print("market personnel  name:%s, age:%d" % (self.name, self.age))
     def count_money(self):
+        """
+            薪资 = 底薪 + 提成
+        :return:
+        """
         return self.base_money + self.up_money
 
 pm = PersonnelManager()
